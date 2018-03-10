@@ -1,8 +1,8 @@
 # Project 7: Authenticated brevet time calculator service
 
 ## Author and Contact
-Luyao Wang
-luyaow@uoregon.edu
+# Luyao Wang
+# luyaow@uoregon.edu
 
 Register a new_user:
 * http://localhost:5001/api to register username
