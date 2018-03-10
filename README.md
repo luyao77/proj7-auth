@@ -1,14 +1,27 @@
 # Project 7: Authenticated brevet time calculator service
 
-## What is in this repository
+## Author and Contact
+# Luyao Wang
+# luyaow@uoregon.edu
 
-You have a minimal implementation of password- and token-based authentication modules in "Auth" folder, using which you can create authenticated REST API-based services (as demonstrated in class). 
+Register a new_user:
+* http://localhost:5001/api to register username
+After register then u go
+* http://localhost:5001/api/register to get the value
+Get Token (this is example)
+* http://localhost:5001/api/token?username=luyaow&password=UOCIS322 to test username and password, here you can change the username and password
 
-## Recap 
+
+*  http://localhost:5001/protected/users/eyJhbGciOiJIUzI1NiIsImlhdCI6MTUyMDY2Mzg4OSwiZXhwIjoxNTIwNjY0NDg5fQ.eyJpZCI6Mn0.m7-4hp7fJPNGkW69uskZFppqGes39xf5j_s_6kY9vGI to get the token
+
+* http://localhost:5001/listOpenOnly?token=eyJhbGciOiJIUzI1NiIsImlhdCI6MTUyMDY2NTExOCwiZXhwIjoxNTIwNjY1NzE4fQ.eyJpZCI6MX0.C4vY73Qo-P_CUw6_QIattVQZQLd8JI_U3BVEVcJm5V0 change the token =, and listOpenOnly to any other request.
+
+
+## Recap
 
 You will reuse *your* code from project
-6 (https://github.com/UOCIS322/proj6-rest). Recall: you created the 
-following three parts: 
+6 (https://github.com/UOCIS322/proj6-rest). Recall: you created the
+following three parts:
 
 * You designed RESTful services to expose what is stored in MongoDB.
 Specifically, you used the boilerplate given in DockerRestAPI folder, and
@@ -20,8 +33,8 @@ created the following:
 
 ** "http://<host:port>/listCloseOnly" should return close times only
 
-* You also designed two different representations: one in csv and one 
- in json. For the above, JSON should be your default representation. 
+* You also designed two different representations: one in csv and one
+ in json. For the above, JSON should be your default representation.
 
 ** "http://<host:port>/listAll/csv" should return all open and close times in CSV format
 
@@ -38,7 +51,7 @@ created the following:
 * You also added a query parameter to get top "k" open and close
 times. For examples, see below.
 
-** "http://<host:port>/listOpenOnly/csv?top=3" should return top 3 open times only (in ascending order) in CSV format 
+** "http://<host:port>/listOpenOnly/csv?top=3" should return top 3 open times only (in ascending order) in CSV format
 
 ** "http://<host:port>/listOpenOnly/json?top=5" should return top 5 open times only (in ascending order) in JSON format
 
@@ -52,17 +65,17 @@ In this project, you will add the following functionality:
 
     Registers a new user. On success a status code 201 is returned. The body of the response contains
 a JSON object with the newly added user. A `Location` header contains the URI
-of the new user. On failure status code 400 (bad request) is returned. Note: The 
-password is hashed before it is stored in the database. Once hashed, the original 
+of the new user. On failure status code 400 (bad request) is returned. Note: The
+password is hashed before it is stored in the database. Once hashed, the original
 password is discarded. Your database should have three fields: id (unique index),
-username and password. 
+username and password.
 
 - GET **/api/token**
 
     Returns a token. This request must be authenticated using a HTTP Basic
-Authentication (see password.py for example). On success a JSON object is returned 
-with a field `token` set to the authentication token for the user and 
-a field `duration` set to the (approximate) number of seconds the token is 
+Authentication (see password.py for example). On success a JSON object is returned
+with a field `token` set to the authentication token for the user and
+a field `duration` set to the (approximate) number of seconds the token is
 valid. On failure status code 401 (unauthorized) is returned.
 
 - GET **/RESOURCE-YOU-CREATED-IN-PROJECT-6**
