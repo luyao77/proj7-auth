@@ -1,8 +1,8 @@
 # Project 7: Authenticated brevet time calculator service
 
 ## Author and Contact
-# Luyao Wang
-# luyaow@uoregon.edu
+Luyao Wang
+luyaow@uoregon.edu
 
 Register a new_user:
 * http://localhost:5001/api to register username
@@ -12,7 +12,7 @@ Get Token (this is example)
 * http://localhost:5001/api/token?username=luyaow&password=UOCIS322 to test username and password, here you can change the username and password
 
 
-*  http://localhost:5001/protected/users/eyJhbGciOiJIUzI1NiIsImlhdCI6MTUyMDY2Mzg4OSwiZXhwIjoxNTIwNjY0NDg5fQ.eyJpZCI6Mn0.m7-4hp7fJPNGkW69uskZFppqGes39xf5j_s_6kY9vGI to get the token
+*  http://localhost:5001/api/protected/eyJhbGciOiJIUzI1NiIsImlhdCI6MTUyMDY2Mzg4OSwiZXhwIjoxNTIwNjY0NDg5fQ.eyJpZCI6Mn0.m7-4hp7fJPNGkW69uskZFppqGes39xf5j_s_6kY9vGI to get the token
 
 * http://localhost:5001/listOpenOnly?token=eyJhbGciOiJIUzI1NiIsImlhdCI6MTUyMDY2NTExOCwiZXhwIjoxNTIwNjY1NzE4fQ.eyJpZCI6MX0.C4vY73Qo-P_CUw6_QIattVQZQLd8JI_U3BVEVcJm5V0 change the token =, and listOpenOnly to any other request.
 
